@@ -1,0 +1,18 @@
+<div class="card h-100 shadow-sm">
+
+  <div class="card-body d-flex flex-column">
+
+    <div class="btn-group mt-auto">
+      <button type="button" class="btn btn-outline-secondary fa fa-check mr-2" value="{{ table.id }}" (click)="onFavoriteSelection(table.id)" *ngIf="table.id  >= 7">
+      </button>
+        <h4 class="text-uppercase">{{ table.altName }}</h4>
+    </div>
+    
+  </div>
+
+  <img
+    src="{{ table.urlName }}"
+    alt="{{ table.altName }}"
+    class="img-fluid bg-info"
+  />
+</div>

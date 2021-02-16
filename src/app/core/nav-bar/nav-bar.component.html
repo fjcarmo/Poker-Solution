@@ -1,0 +1,39 @@
+<header class="d-flex flex-column flex-md-row align-items-center justify-content-between px-md-3 mb-3 bg-white border-bottom shadow-sm fixed-top">
+  <img src="../../../assets/images/logo.png" style="max-height: 70px" alt="logo"/>
+  <div class="form-inline mt-2">
+    <div>
+      <select class="custom-select mb-3" (change)="onTableSelected($event.target.value)">
+        <option *ngFor="let item of sbOptions" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+
+    <div class="ml-2 mb-3">
+      <select class="custom-select " (change)="onTableSelected($event.target.value)">
+        <option *ngFor="let item of bbOptions" [value]="item">
+          {{ item }}
+        </option>
+      </select>
+    </div>
+
+    <div class="ml-2 mb-3">
+      <button type="button" class="btn btn-success" (click)="onTableSelected('Home')">
+        Home
+      </button>
+    </div>    
+  </div>
+
+  <div class="d-flex align-items-center text-uppercase ml-2 mb-3" style="font-size: larger">
+    <div class="form-inline mt-2 mr-3">
+        <button type="button" class="btn btn-success" (click)="calculateRng(50)">
+          Suited 50%
+        </button>
+        <button type="button" class="btn btn-success ml-2" (click)="calculateRng(25)">
+          Suited 25%
+        </button>
+        <input type="button" class="textbox ml-2" disabled [style.background-color]="playable? 'red': 'green'" value="{{ rng }}" style="font-weight: bold; color:black;">
+    </div>
+      Heads-up strategy    
+  </div>
+</header>

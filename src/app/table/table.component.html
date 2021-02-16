@@ -1,0 +1,7 @@
+<app-nav-bar (click)="onTableSelected($event.target.value)"></app-nav-bar>
+
+<div class="row">  
+  <div class="col-4 mb-4" *ngFor="let item of tables">
+    <app-table-item [table]="item" (click)="onFavoriteSelected($event.target.value)"></app-table-item>
+  </div>
+</div>
